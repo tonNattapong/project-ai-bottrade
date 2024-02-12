@@ -1,0 +1,101 @@
+*{
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Prompt', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    margin: 0px;
+    background-color: #161A1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.menu{
+    float: left;
+   
+}
+/* .logoutbut{
+    float: right;
+} */
+.menubar{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color:#161A1E;
+    
+    
+}
+
+h2{
+    color: white;
+}
+.container{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    height: 100px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: rgb(88,83,88,0.5);
+    
+}
+.submitbut{
+    font-size: 20px;
+    color: white;
+    background-color: #E58E27;
+    width: 175px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+#bar {
+    font-size: 40px;
+    color: #E58E27;
+}
+.logoutbut{
+    color: rgb(160, 20, 20);
+}
+ul{
+   
+    background-color: #161A1E;
+}
+ul li{
+    display: inline-block;
+    position: relative;
+}
+ul li a{
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    padding: 10px;
+    color: black;
+    text-align: center;
+}
+ul li ul.dropdown li{
+    display: block;
+}
+ul li ul.dropdown {
+    border-radius: 0px 0px 20px 20px;
+    width: 160px;
+  
+    background-color: #E58E27;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+ul li a:hover{
+    opacity: 0.7;
+}
+ul li:hover ul.dropdown{
+    display:block;
+}
+
+span.status{
+   color: aliceblue;
+}
