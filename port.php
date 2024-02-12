@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+if (!isset($_SESSION["portnumber"])) {
+    header("location: login.php");
+    exit(); // ต้องใส่ exit เพื่อหยุดการทำงานทันทีหลังจาก redirect
+}
+?>
 <?php
 include('connect.php');
 
@@ -6,8 +14,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// ดึงข้อมูลจากฐานข้อมูล
-$sql = "SELECT profit_date, equity, balance FROM profit";
+$portnumber = $_SESSION['portnumber'];
+$sql = "SELECT profit_date, equity, balance FROM profit WHERE portnumber = '$portnumber'";
 $result = $conn->query($sql);
 
 // สร้างอาร์เรย์สำหรับเก็บข้อมูลที่ดึงมา
