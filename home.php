@@ -107,7 +107,7 @@ mysqli_close($conn);
         </div>
         <div class="action">
             <a href="payment.php" class="bill">บิลของฉัน</a>
-            <a href="https://www.analyticsinsight.net/wp-content/uploads/2021/09/Want-to-trade-automatic-See-Top-10-Crypto-Trading-Bots-in-2021.jpg" download="bot.jpg" class="dload">
+            <a href="/bot+model/bot04.mql" download="" class="dload">
                 ดาวน์โหลด
             </a>
         </div>
