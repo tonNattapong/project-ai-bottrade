@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['portnumber'] = $portnumber;
         $_SESSION['Role'] = $row['Role'];
             if( $_SESSION['Role'] == 'user'){
-                header("Location: home.php"); 
+                header("Location: homepage.php"); 
             }else if( $_SESSION['Role'] == 'admin') {
                 header("Location: admin.php"); 
             }

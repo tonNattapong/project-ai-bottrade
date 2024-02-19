@@ -21,19 +21,14 @@ if (!isset($_SESSION["portnumber"])) {
 </head>
 
 <body>
-    <ul>
-        <li><a href=""><i class="fa-solid fa-bars" id="bar">admin</i></a>
-            <ul class="dropdown">
-                <li><a href="status.php">Status</a></li>
-                <li><a href="bot.php">Download</a></li>
-                <li><a href="logout.php" class="logoutbut">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i> </a></li>
-            </ul>
-        </li>
 
-    </ul>
-  
+        
+
+
+
     <h2> คำขอร้องสิทธิ์ </h2>
     <div class="container">
+    <a href="logout.php" ><i class="fa-solid fa-arrow-right-from-bracket" style="color: #FFD43B;"></i> </a>
     <table class='tablecontent'>
         <tr>
             <th>portnumber</th>
@@ -72,10 +67,14 @@ if (!isset($_SESSION["portnumber"])) {
             echo "<tr><td colspan='5'>0 results</td></tr>";
         }
 
-        $conn->close();
+        
         ?>
     </table>
+
     </div>
+    
+  
+
 </body>
 
 </html>

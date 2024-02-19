@@ -25,5 +25,5 @@ if ($conn->query($sql) === TRUE) {
 // ปิดการเชื่อมต่อ
 $conn->close();
 
-header("Location: home.php?status=$status&message=$message");
+header("Location: status.php?status=$status&message=$message");
 exit;

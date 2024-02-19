@@ -1,0 +1,359 @@
+*{
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Prompt', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   display:flex;
+    background-color: #d9d9d9;
+    align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
+    height: 100vh; /* ส่วนสูงของ body จะเต็มเต็มหน้าจอ */
+    margin: 0; /* ลบ margin ทั้งหมดที่อาจถูกกำหนดไว้ */
+    
+}
+.center {
+  display: flex;
+  justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวนอน */
+  align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
+  height: 100vh; /* ทำให้เนื้อหาอยู่ตรงกลางของหน้าจอ */
+  text-align: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  margin-top: 50px; /* ระยะห่างด้านบน */
+  margin-left: 780px; /* ระยะห่างด้านซ้าย เท่ากับความกว้างของ sidebar */
+}
+
+.status.green h1 {
+  color: rgb(81, 131, 7); /* เปลี่ยนสีข้อความเป็นสีเขียว */
+}
+.status.yellow h1 {
+  color: #f0b30d; /* เปลี่ยนสีข้อความเป็นสีเขียว */
+}
+.dload{
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  float: right;
+  border: 1px solid black;
+  border: none;
+  
+}
+form{
+  display: flex;
+    justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
+    margin-top: 20px; /* ปรับระยะห่างของปุ่มจากขอบด้านบน */
+}
+
+.submitbut{
+  background-color: #E58E27;
+ 
+  border-radius: 10px;
+  justify-content: center;
+  
+  align-items: center;
+}
+.submitbut input{
+  color: white;
+}
+.bill{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  align-items: center;
+  border: none;
+  padding: 20px;
+}
+.status {
+  display: flex;
+  flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+  justify-content: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  align-items: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  text-align: center; /* จัดให้อยู่ตรงกลางในแนวนอน (สำหรับข้อความ) */
+  margin-bottom: 10px;
+}
+
+.action{
+  background-color: #E58E27;
+ 
+  border-radius: 10px;
+  justify-content: center;
+  
+  align-items: center;
+}
+.status-box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+*a{
+    color:rgb(10, 4, 4);
+}
+.sidebar{
+   
+    width: 80px;
+    background-color: #191919;
+    min-height: 100vh;
+    transition: .3s;
+    overflow: hidden;
+}
+.sidebar:hover{
+    width: 200px;
+
+}
+.sidebar:hover ul li a span{
+    opacity: 1;
+    visibility: 1;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    padding: 25px 0 25px 20px;
+
+}
+ul li a:hover{
+    background-color: white;
+}
+ul li a li {
+    width: 35px;
+}
+ul li a span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #E58E27;
+    margin-left: 10px;
+    opacity: 0;
+    visibility:0; 
+    transition: 0.3s ease-in;
+}
+.sidebar img{
+    width: 40px;
+    border-radius: 50%
+}
+ul li a i{
+    font-size: 25px;
+    color: #E58E27;
+}.account-info {
+    display: inline;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+  }
+  
+  .profile-pic {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .username {
+    font-size: 14px;
+    font-weight: bold;
+
+  }
+  
+  .port-number, .status {
+    font-size: 14px;
+  }
+  
+  .status {
+    font-size: 12px;
+    color: #4caf50;
+  }
+  .logoutbut {
+    float: right;
+    margin: 0;
+    font-size: 20px;
+
+    
+  }
+  .logoutbut i {
+  color:#161A1E;
+    
+  }
+  
+
+  .container {
+    margin: 0 auto; /* จัดให้อยู่กลางแนวนอนเท่านั้น */
+    /* เพิ่ม margin-top เพื่อไม่ให้ตัดเนื้อหาด้านบนของหน้าจอ */
+}
+
+ 
+
+
+
+
+
+
+
+  .image-container {
+ 
+    display: flex;
+    border-radius: 20px;
+    position: relative;
+    width: 900px;
+    height: 400px;
+    margin: 50px auto;
+   
+   
+  }
+  
+  .image-container img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)), url('img/graph.png');
+    filter: blur(2px); /* ปรับระดับความเบลอตามที่ต้องการ */
+ 
+    
+  }
+  
+  .image-caption {
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    color: #fff;
+  }
+  
+  .image-caption h2 {
+    font-size: 40px;
+    margin-bottom: 5px;
+   
+  }
+  .status h2{
+    color: #161A1E;
+    font-size: 40px;
+    margin: 10px;
+  }
+  .image-caption p {
+    font-size: 16px;
+    margin: 0;
+  }
+  .image-container button{
+    background-color: #E58E27;
+    border-radius: 50px;
+    width: 170px;
+    height: 60px;
+    border: none;
+    font-weight: bold;
+    
+  }
+  .image-container button p{
+    font-size: 20PX;
+    
+  }
+
+
+  input .submitbut{
+   
+    padding: 29px;
+    border: 20px;
+    background-color: #fdfdfd;
+    font-size:20px;
+    align-items: center;
+    
+  }
+
+
+
+  .wrapper{
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+.carousel img:first-child{
+  margin-left: 0px;
+}
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+}
+
+.status-box{
+  position: absolute;
+    top: 60px; /* Set distance from top edge */
+    left: 50%; /* Move the box to the horizontal center */
+    transform: translateX(-50%); /* Adjust to perfectly center horizontally */
+    width: 300px; /* Adjust width as needed */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

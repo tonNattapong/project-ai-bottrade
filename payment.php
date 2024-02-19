@@ -4,6 +4,27 @@ if (!isset($_SESSION["portnumber"])) {
     header("location: login.php");
     exit();
 }
+
+include('connect.php');
+
+$sql = "SELECT portnumber, permission FROM infouser WHERE portnumber = '" . $_SESSION["portnumber"] . "'";
+$result = $conn->query($sql);
+
+// ตรวจสอบว่ามีข้อมูลในฐานข้อมูลหรือไม่
+
+?>
+
+<?php
+if ($result->num_rows > 0) {
+    // วนลูปเพื่อดึงข้อมูลแต่ละแถว
+    while($row = $result->fetch_assoc()) {
+        $portnumber = $row["portnumber"];
+        $permission = $row["permission"];
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +33,7 @@ if (!isset($_SESSION["portnumber"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="css/payment.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&family=Prompt:wght@300&display=swap" rel="stylesheet">
@@ -42,35 +63,80 @@ if (!isset($_SESSION["portnumber"])) {
             top: 10px;
             right: 10px;
             color: #fff;
-            font-size: 20px;
+            font-size: 40px;
             cursor: pointer;
             z-index: 1000;
+            color:#E58E27;
+            
         }
+        .paybut {
+        width: 60px;
+        height: 25px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .paybut:hover {
+        background-color: #45a049;
+    }
     </style>
 </head>
 
 <body>
+
+    <div class="sidebar">
     <ul>
-        <li><a href=""><i class="fa-solid fa-bars" id="bar"></i></a>
-            <ul class="dropdown">
-                <li><a href="home.php">Home</a></li>
-                <li><a href="port.php">Port</a></li>
-                <li><a href="logout.php" class="logoutbut">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i> </a></li>
-            </ul>
-        </li>
+            <li><a href="#"><img src="img/logo.png" alt=""></a></li>
+            <li><a href="homepage.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+            <li><a href="port.php"><i class="fa-solid fa-wallet"></i><span>Port</span></a></li>
+            <li><a href="status.php"><i class="fa-solid fa-check"></i></i><span>Status</span></a></li>
+            <li><a href="download.php"><i class="fa-solid fa-download"><span>Dowload</span></i></a></li>
+            <li><a href="payment.php"><i class="fa-solid fa-file-invoice-dollar"></i><span>My Bill</span></i></a></li>
+        </ul>
+    </div>
 
-    </ul>
+    <nav>
+        <div class="account-info">
+            <div class="logoutbut">
+                <a href="logout.php" ><i class="fa-solid fa-arrow-right-from-bracket"></i> </a>
+            </div>
+            <div class="profile-pic">
+                <img src="img/acc.PNG" alt="Profile picture">
+            </div>
+            
+            <div class="user-details">
+                    <p class="port-number">Port: <?php echo $portnumber; ?></p>
+                    <?php
+                    // ตรวจสอบค่าของ $permission เพื่อแสดงข้อความและสีตามเงื่อนไข
+                    if ($permission == "ALLOW") {
+                        echo '<p class="status" style="color: green;">มีสิทธิเข้าใช้งาน</p>';
+                    } elseif ($permission == "pending") {
+                        echo '<p class="status" style="color: #E1A12B;">รออนุมัติ</p>';
+                    } elseif ($permission == "not allow") {
+                        echo '<p class="status" style="color: red;">ไม่มีสิทธิเข้าใช้งาน</p>';
+                    } else {
+                        echo '<p class="status" style="color: black;">ไม่ทราบสถานะ</p>';
+                    }
+                    ?>
+                </div>
+    
+    </nav>
 
-    <h2>บิลของฉัน</h2>
     <div class="container">
+    <h2>บิลของฉัน</h2>
         <table class='tablecontent'>
             <tr>
-                <th>portnumber</th>
-                <th>start</th>
-                <th>end</th>
-                <th>total</th>
-                <th>total trade</th>
-                <th>pay</th>
+                <th>Portnumber</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Total</th>
+                <th>Total Trade</th>
+                <th>Pay</th>
             </tr>
             <?php
             include('connect.php');
@@ -78,19 +144,21 @@ if (!isset($_SESSION["portnumber"])) {
 
             // คำสั่ง SQL เพื่อดึงข้อมูลจากตาราง history โดยรวมและจัดกลุ่มตามวัน
             $sql = "SELECT 
-                        portnumber, 
-                        MIN(date) AS start_date, 
-                        MAX(date) AS end_date, 
-                        SUM(money) AS total, 
-                        COUNT(money) AS total_trade 
-                    FROM 
-                        history 
-                    WHERE 
-                        portnumber = '$portnumber' 
-                        AND 
-                        date >= NOW() - INTERVAL 7 DAY 
-                    GROUP BY 
-                        DATE(date)";
+            portnumber, 
+            MIN(date) AS start_date, 
+            MAX(date) AS end_date, 
+            SUM(money) AS total, 
+            COUNT(money) AS total_trade 
+        FROM 
+            history 
+        WHERE 
+            portnumber = '$portnumber' 
+            AND 
+            date >= (SELECT MIN(date) FROM history WHERE portnumber = '$portnumber') 
+            AND 
+            date <= NOW() 
+        GROUP BY 
+            FLOOR(DATEDIFF(date, (SELECT MIN(date) FROM history WHERE portnumber = '$portnumber')) / 7)";
 
             $result = mysqli_query($conn, $sql);
 
@@ -102,7 +170,7 @@ if (!isset($_SESSION["portnumber"])) {
                     echo "<td>" . $row['end_date'] . "</td>";
                     echo "<td>" . $row['total'] . "</td>";
                     echo "<td>" . $row['total_trade'] . "</td>";
-                    echo "<td><button onclick='showQR()'>pay</button></td>";
+                    echo "<td><button onclick='showQR()' class='paybut'>pay</button></td>";
                     echo "</tr>";
                 }
             } else {

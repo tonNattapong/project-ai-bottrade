@@ -11,7 +11,7 @@
 body{
    
     background-color: #d9d9d9;
-    display: flex;
+    
     align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
     height: 100vh; /* ส่วนสูงของ body จะเต็มเต็มหน้าจอ */
     margin: 0; /* ลบ margin ทั้งหมดที่อาจถูกกำหนดไว้ */
@@ -123,13 +123,7 @@ ul li a i{
   
 
 
-.content{
-    display: block;
-    justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวนอน */
-    align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
-    width: 100%; /* ทำให้เต็มขอบ */
-    height: 100vh; /* สูงเต็มหน้าจอ */
-}
+
 
 .sidebar {
     position: fixed;
@@ -140,7 +134,6 @@ ul li a i{
     height: 100vh;
     transition: width 0.3s;
     overflow: hidden;
-     
 }
 
 .sidebar:hover {
@@ -151,22 +144,6 @@ ul li a i{
     opacity: 1;
     visibility: visible;
 }
-.content {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    width: calc(100% - 200px); /* ลบขนาดของ sidebar ออก */
-    height: 100vh;
-    margin-left: 200px; /* เพิ่มระยะห่างด้านซ้ายของ content เพื่อไม่ให้ซ้อนกับ sidebar */
-}
-
-.chart-canvas {
-    width: 69%; /* ปรับขนาด canvas ให้เล็กลง */
-    height: 69%; /* ปรับขนาด canvas ให้เล็กลง */
-}
-
-
-/* 
 .tablecontent {
     border-collapse: collapse;
     display:flex;
@@ -179,7 +156,7 @@ ul li a i{
 
 .tablecontent th, .tablecontent td {
     text-align: center; 
-    width: 100px;
+    width: 140px;
     
    
 }
@@ -190,14 +167,15 @@ ul li a i{
     border-radius: 5px;
 }
 .tablecontent th{
-    background-color: #D9D9D9;
+    background-color:#E58E27;
    
     
-/*    
+   
 }
 .tablecontent td{
     color: white;
     font-size: 13px;
+   
    
 }
 
@@ -208,17 +186,36 @@ ul li a i{
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-} */
-
-
+}
 
 
 .FFF{
     display: flex;
     float:left;
-} */
-h1{
-    color: #D9D9D9;
-  
-    text-align: center; /* ทำให้ข้อความอยู่ตรงกลาง */
+}
+
+h2 {
+    margin-top: 20px;
+    grid-column: 1 / -1; /* ตั้งแต่ column แรกจนถึง column สุดท้ายใน grid */
+    text-align: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวนอน */
+}
+.container {
+    justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
+    height: 100vh; /* ทำให้เต็มหน้าจอด้านตั้ง */
+}
+.paybut {
+   
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px ;
+    margin-top: 10px ;
+    transition: background-color 0.3s;
+
+}
+
+.paybut:hover {
+    background-color: #191b19;
 }
