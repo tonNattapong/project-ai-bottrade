@@ -20,10 +20,13 @@
         align-items: center;
         min-height: 100vh;
         background-color: #0C0F14;
+
     }
+
+  
  /* ____________________mobile____________________________ */
 
-@media screen and (max-width: 769px){
+@media screen and (max-width: 768px){
    
     .sidebar {
         display: none;
@@ -36,10 +39,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    position: fixed;
     left: 0;
     margin: 0;
     padding: 0;
-    bottom: 0%;
+    TOP: 0%;
     
    }
    .mobile_mode a img{
@@ -164,150 +168,78 @@
         height: 53px;
         background-color: #252a32b9;
         backdrop-filter: blur(111px);
-        transition: background-color 0.3s ease; /* เพิ่ม transition เพื่อทำให้การเปลี่ยนสีเป็นอย่างอ่อนโยน */
-
     }
 
 
     .mobile_sidebar ul li a i:hover {
-        background-color:#AEAEAE /* เปลี่ยนสีเป็นสีขาวอ่อนโดยใช้ RGBA */
+        background-color:#AEAEAE; /* เปลี่ยนพื้นหลังเป็นสีขาวเมื่อ hover */
+        border-radius: 50%; /* เพิ่มขอบโค้งให้กับไอคอน */
     }
 
-    
-/* ____________________trading graph____________________________ */
- 
-.tradingview-widget-container {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem;
-    border-radius: 15px;
-    padding: 5px;
-    background-color: #252A32;
-    width: 95%!important;
-   
-}
-
-
-.tradingview-widget-container__widget {
-    width:100% !important;
-    height: 100% !important;
-}
-
-
 /* ________________________________________________ */
-
-
-.content{
-    width: 100%;
+.status-content{
     display: flex;
-    justify-content: center; 
-    align-items: center;
-    flex-direction: column; 
-    margin: 1rem    ;
-   
-}
-
-.slider{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    width:100%;
-}
-   
-   
-
-.content h2{
-    margin-top: 2rem;
-    color: white;
-
-}
-.slide{
-    width:100%;
-    height: 6rem;
-    flex-direction: row;
-    position: relative;
-    padding: 15px;
-    background-color: #252a3252;
-    color: white;
-    border-radius: 10px;
-    display: flex; /* เพิ่มบรรทัดนี้ */
-    align-items: center; /* เพิ่มบรรทัดนี้ */
-    margin-bottom: 2rem;
-    flex-direction: row; /* เปลี่ยนเป็นแนวนอน */
-    justify-content: space-around; /* จัดวางตามระยะห่างระหว่างองค์ประกอบ */
-    align-items: center; /* จัดวางให้กึ่งกลางตามแนวตั้ง */
-  
-
-}
-.label{
-    width: 120px;
-    margin: 5px;
-}
-
-.slide h2 {
-    justify-content: center;
+    justify-content:center; /* เพิ่มบรรทัดนี้ */
+    align-items: center; 
+    background-color:#252A32;
+    padding: 30px;
     text-align: center;
-    padding-bottom: 10px;
-    align-items: center;
-    position: absolute; /* ตั้งค่า position เป็น absolute สำหรับ h2 */
-    top: -50%; /* จัดวาง h2 ที่ด้านบนของ slide */
-    transform: translateX(-90%); /* ย้าย h2 ไปทางซ้ายอยู่ 50% ของ slide */
-    background-color: #D17842;
-    width: 40px;
-    height: 40px;
-    border-radius:60px ;
-    left: 7%; /* จัดวาง h2 ให้ชิดซ้ายของ slide */
-    z-index: 1; /* ตั้งค่า z-index เพื่อให้ h2 อยู่ด้านบนของรูปภาพ */
-}
-.slide img{
-    float: left;
-   border-radius: 10px;
-   width: 70px;
-   margin-right: 4px;
-}
-.slide h4{
-    flex-direction: column; /* เพิ่มบรรทัดนี้ */
-    font-weight: lighter;
-}
-.slide h3{
-    font-weight: lighter;
-}
-.slide a{
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    text-align: center;
-    width: 60px;
-    margin-top: 15px;
-    color: #FFFFFF;
-    background-color: #D17842;
-    border-radius: 5px;
-    padding: 5px;
-    border: 0;
-   
- }
- .slide p{
+    width: 40%;
+    border-radius: 20px;
+    color: white;
+    }
+    .green {
+        color: #00FF00; /* สีเขียว */
+    }
+    .yellow {
+        color: #E1A12B; /* สีเหลือง */
+    }
+    .orange {
+        color: #ff9900; /* สีเหลือง */
+    }
     
-    text-align: center;
-   margin-right: 10px;
- }
-.topic{
-    width: 220px;
-    text-align: center;
-    padding: 10px;
-    background-color: #252A32;
-    border-radius: 10px;
-    font-size: 16px;
-}
+    .action{
+        text-align: center;
+        color: white;
+        margin: 20px;
+    }
+    .bill{
+        padding: 10px;
+        background-color: #D17842;
+        border-radius: 20px;
+       
+        color: white;
+    }
+    .require-content {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column; /* เพิ่มบรรทัดนี้เพื่อจัดวางเนื้อหาในแนวตั้ง */
+        align-items: center; 
+        background-color:#252A32;
+        padding: 30px;
+        text-align: center;
+        width: 60%;
+       
+        border-radius: 20px;
+        color: white;
+
+    }
+  
+    
+    .submitbut{
+        padding: 10px;
+        background-color: #D17842;
+        border-radius: 20px;
+       border: 0;
+        color: white;
+        margin: 10px;
+    }
+
+
 
 }
 /* ____________________desktop___________________________ */
-@media screen and (min-width: 770px){
+@media screen and (min-width: 768px){
     .mobile_mode{
         display: none;
        }
@@ -331,7 +263,7 @@
         display: none;
    }
     .dl{
-        font-weight: 400;
+        font-weight: 300;
     }
     .hidden-sidebar {
         transform: translateY(-100%);
@@ -450,108 +382,66 @@
     }
 
 
-/* ____________________trading graph____________________________ */
+/* ________________________________________________ */
  
-.tradingview-widget-container {
-    
+.status-content{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem;
-    border-radius: 15px;
-    padding: 5px;
-    background-color: #252A32;
-    width: 100%!important;
+    justify-content:center; /* เพิ่มบรรทัดนี้ */
+    align-items: center; 
+    background-color:#252A32;
+    padding: 30px;
+    text-align: center;
+    width: 40%;
+    border-radius: 20px;
+    color: white;
+    }
+    .green {
+        color: #00FF00; /* สีเขียว */
+    }
+    .yellow {
+        color: #E1A12B; /* สีเหลือง */
+    }
+    .orange {
+        color: #ff9900; /* สีเหลือง */
+    }
+    
+    .action{
+        text-align: center;
+        color: white;
+        margin: 20px;
+    }
+    .bill{
+        padding: 10px;
+        background-color: #D17842;
+        border-radius: 20px;
+       
+        color: white;
+    }
+    .require-content {
+        display: flex;
+        flex-direction: column; /* เพิ่มบรรทัดนี้เพื่อจัดวางเนื้อหาในแนวตั้ง */
+        align-items: center; 
+        background-color:#252A32;
+        padding: 30px;
+        text-align: center;
+        width: 30%;
+        border-radius: 20px;
+        color: white;
+
+    }
+  
+    
+    .submitbut{
+        padding: 10px;
+        background-color: #D17842;
+        border-radius: 20px;
+        border: 0;
+        color: white;
+        margin: 10px;
+    }
    
-}
-
-
-.tradingview-widget-container__widget {
-    width:100% !important;
-    height: 100% !important;
-}
-
-
-
 /* ________________________________________________ */
 
-
-.content{
-    display: flex;
-    justify-content: center; 
-    flex-direction: column; 
-    margin: 5rem;
-}
-
-.slider{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-   
-   
-
-.content h2{
-    margin-top: 2rem;
-    color: white;
-
-}
-.slide{
-  
-    position: relative;
-    text-align: center;
-    padding: 15px;
-    background-color: #252a3252;
-    color: white;
-    border-radius: 10px;
-    margin-right: 30px;
-  
-}
-.slide h2 {
-    
-    align-items: center;
-    position: absolute; /* ตั้งค่า position เป็น absolute สำหรับ h2 */
-    top: -15%; /* จัดวาง h2 ที่ด้านบนของ slide */
-    transform: translateX(-90%); /* ย้าย h2 ไปทางซ้ายอยู่ 50% ของ slide */
-    background-color: #D17842;
-    width: 40px;
-    height: 40px;
-    border-radius:60px ;
-    left: 10%; /* จัดวาง h2 ให้ชิดซ้ายของ slide */
-    z-index: 1; /* ตั้งค่า z-index เพื่อให้ h2 อยู่ด้านบนของรูปภาพ */
-}
-.slide img{
-   border-radius: 10px;
-   width: 170px;
-}
-.slide h4{
-    font-weight: lighter;
-}
-.slide h3{
-    font-weight: lighter;
-}
-.slide a{
-    font-size: 14px;
-    float: right;
-    width: 70px;
-    margin-top: 15px;
-    color: #FFFFFF;
-    background-color: #D17842;
-    border-radius: 5px;
-    border: 0;
-    padding: 5px;
- }
-.topic{
-    width: 220px;
-    text-align: center;
-    padding: 10px;
-    background-color: #252A32;
-    border-radius: 10px;
-   
-}
 
 
 

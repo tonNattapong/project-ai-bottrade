@@ -1,50 +1,172 @@
 *{
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-family: 'Prompt', sans-serif;
+    font-family: "Prompt", sans-serif;
+    margin: 0px;
+    box-sizing:border-box ;
+    padding: 0;
+    text-decoration: none; 
 }
-h2{
-    color: #E58E27;
-    font-size: 30px;
+
+.prompt-regular {
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+   body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+/* mobile */
+@media screen and (max-width: 768px){
+    body {
+        background-color: #d9d9d9;
+      
+        margin: 0;
+    }
    
-}
-body{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color:#161A1E;
-    color: aliceblue;
-    height: 100vh;
-}
-.container{
+    .container{  
+        border-radius: 1.2em;
+        margin: 2rem;
+        padding: 2rem;
+        height: 47rem;
+        color: black;
+        width: 20rem;
+        text-align: center;
+        background-color:  white;  
+    }
+
+    h2{
+       color: #E58E27;
+        text-align: center;  
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        
+    }
+ 
+    .inputbox{
+        border:0px;
+        border-radius: 0.4rem;
+        width: 17rem;
+        height: 2.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+        background-color: #f0eded;
+        box-shadow: 1px 1px 1px 1px rgba(107, 107, 107, 0.5);
+     
+     }
+     .loginbut{
+        text-align: center;
+        border:0px;
+        border-radius: 0.4rem;
+        width: 17rem;
+        height: 3rem;
+        font-size:1rem;
+        font-weight: bold;
+        background-color: rgba(255, 153, 19, 0.219);
+        backdrop-filter: blur(10px);
+        color: #573000;
+     }
+     .loginbut:hover{
+        opacity: 0.75;
+       
+     }
+     
+     form{
+        
+        font-size: 1rem;
+     }
     
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px;
-    border-radius: 20px;
-    background-color: rgb(88,83,88,0.5);
+     a{
+        text-align: center;
+        font-weight: bold;
+        color: #E58E27;
+        font-size: 1rem;
+     }
+    form p {
+    
+       text-align: left;
+       margin-left: 1rem;
+    }
+    
+     img{
+        
+        width: 70px;
+     }
 }
-.loginbut{
-    font-size: 20px;
-    color: white;
-    background-color: #E58E27;
-    width: 307px;
-    height: 40px;
-    border-radius: 10px;
-}
-.inputbox{
-    color: black;
-    font-size: 15px;
-    background-color: white;
-    width: 300px;
-    height: 35px;
-    border-radius: 10px;
-}
-a{
-    color: #E58E27;
-}
-input{
-    margin-top: 10px;
+/* desktop */
+@media screen and (min-width: 768px) {
+    body {
+        background-color: #d9d9d9;
+        font-size: 16px;
+        margin: 0;
+    }
+    .container{  
+        border-radius: 1.2em;
+        padding: 2rem;
+        height: 62em;
+        color: black;
+        width: 30rem;
+        text-align: center;
+        background-color:  white;  
+    }
+
+    h2{
+       color: #E58E27;
+        text-align: center;  
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        
+    }
+ 
+    .inputbox{
+        border:0px;
+        border-radius: 0.4rem;
+        width: 20rem;
+        height: 2.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+        background-color: rgba(255, 153, 19, 0.219);
+        backdrop-filter: blur(10px);
+        color: #573000;
+     
+     }
+     .loginbut{
+        border:0px;
+        border-radius: 0.4rem;
+        width: 20rem;
+        height: 3rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #E58E27;
+        color: white;
+        box-shadow: 1px 1px 1px 1px rgba(107, 107, 107, 0.5);
+     }
+     .loginbut:hover{
+        opacity: 0.75;
+       
+     }
+     
+     form{
+        
+        font-size: 1.5rem;
+     }
+    
+     a{
+        font-weight: bold;
+        color: #E58E27;
+        font-size: 1.5rem;
+     }
+    form p {
+        font-weight: bold;
+       text-align: left;
+       margin-left: 3rem;
+    }
+    
+     img{
+      
+        width: 100px;
+     }
 }

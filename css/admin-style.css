@@ -1,126 +1,414 @@
 *{
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-family: 'Prompt', sans-serif;
-    list-style: none;
-    text-decoration: none;
-    margin: 0;
+    font-family: "Prompt", sans-serif;
+    margin: 0px;
+    box-sizing:border-box ;
     padding: 0;
-    box-sizing: border-box;
+    text-decoration: none; 
+    list-style-type: none;
 }
 
-body{
-    background-color: #161A1E;
-   
-    
-}
+.prompt-regular {
+    font-family: "Prompt", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+   body{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #0C0F14;
 
-*a{
-    color:rgb(10, 4, 4);
-}
-.sidebar{
-   
-    width: 80px;
-    background-color: #191919;
-    min-height: 100vh;
-    transition: .3s;
-    overflow: hidden;
-}
-.sidebar:hover{
-    width: 200px;
+    }
 
-}
-.sidebar:hover ul li a span{
-    opacity: 1;
-    visibility: 1;
-}
-
-ul li a {
-    display: flex;
-    align-items: center;
-    padding: 25px 0 25px 20px;
-
-}
-ul li a:hover{
-    background-color: white;
-}
-ul li a li {
-    width: 35px;
-}
-ul li a span{
-    font-size: 16px;
-    font-weight: bold;
-    color: #E58E27;
-    margin-left: 10px;
-    opacity: 0;
-    visibility:0; 
-    transition: 0.3s ease-in;
-}
-img{
-    width: 40px;
-    border-radius: 50%
-}
-ul li a i{
-    font-size: 25px;
-    color: #E58E27;
-}
-
-
-h2{
-    display: flex;
-    padding: 10px;
-    color: aliceblue;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.tablecontent {
-    border-collapse: collapse;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
   
    
-}
+ /* ____________________mobile____________________________ */
 
-.tablecontent th, .tablecontent td {
-    text-align: center; 
-    width: 100px;
-    
+@media screen and (max-width: 768px){
    
-}
+    .sidebar {
+        display: none;
+        
+    }
 
-.tablecontent tr {
-    background-color: #585358;
-      
-    border-radius: 5px;
-}
-.tablecontent th{
-    background-color: #D9D9D9;
-   
-    
-   
-}
-.tablecontent td{
-    color: white;
-    font-size: 13px;
-   
-}
-
-.allowbut{
-    background-color: #E58E27;
-    border-radius:5px ;
-    font-size: 13px;
-    color: white;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-
-.FFF{
+   .mobile_mode{
+    height: 5rem;
+    width: 100%;
     display: flex;
-    float:left;
+    align-items: center;
+    justify-content: space-between; 
+    position: fixed;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    TOP: 0%;
+    
+   }
+   .mobile_mode a img{
+    right: 1;
+    margin-top: 10px;
+    width: 3rem;
+
+   }
+   .account-info{
+    font-size: 12px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #252A32;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    height: 40px;
+    color: #FFFFFF;
+    width: 170px;
+   
+    transition: width 0.3s ease-out;
+   
+    }
+    .user-details{
+        color: #FFFFFF;
+        transition: transform 0.3s ease-in-out;
+        margin-right: 20px;
+    
+    } 
+  
+    .account-info img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        margin-top: 6px;
+        margin-right: 6px;
+        transition: width 0.01s ease-out;
+    
+        
+    }
+   
+    .account-info a {
+        
+        transition: width 0.2s ease-out;
+       
+        
+    }
+    .logoutbut a i{
+        
+        color: #D17842;
+        font-size: 20px;
+        margin-right: 10px;
+       
+    }
+
+   
+
+
+    .mobile_mode {
+        height: 5rem;
+        width: 100%;
+        margin: 0 auto; /* จัดวางตำแหน่งกึ่งกลาง */
+        max-width: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        bottom: 0%;
+    }
+    
+    .mobile_mode a img {
+        right: 1;
+        margin-top: 10px;
+        width: 3rem;
+    }
+    .hidden-sidebar {
+        transform: translateY(-100%);
+    }
+    .mobile_sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1000px;
+        height: 7%;
+        margin: 0;
+        padding: 0;
+        bottom: 0%;
+        position: fixed;
+        width: 100%;
+        background-color: #252a32b9;
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        z-index: 3;
+        width: 100%;
+    }
+    body{
+        color: #252A32;
+    }
+    .mobile_sidebar ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        justify-content: space-between;
+       
+        gap: 1.3rem;
+        width: 100%; /* เพิ่มบรรทัดนี้ */
+        margin: 0 auto; /* เพิ่มบรรทัดนี้ */
+        margin: 6px;
+    }
+    
+    .mobile_sidebar ul li {
+        margin-right: 0;
+    }
+    
+    .mobile_sidebar ul li a i {
+        color: #52555A;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        width: 53px;
+        height: 53px;
+        background-color: #252a32b9;
+        backdrop-filter: blur(111px);
+    }
+
+
+    .mobile_sidebar ul li a i:hover {
+        background-color:#AEAEAE; /* เปลี่ยนพื้นหลังเป็นสีขาวเมื่อ hover */
+        border-radius: 50%; /* เพิ่มขอบโค้งให้กับไอคอน */
+    }
+
+/* ________________________________________________ */
+
+
+
+
+}
+/* ____________________desktop___________________________ */
+@media screen and (min-width: 768px){
+    .mobile_mode{
+        display: none;
+       }
+    .sidebar {
+        display: flex;
+        justify-content: space-between; /* เพิ่มบรรทัดนี้ */
+        align-items: center; 
+        height: 70px;
+        margin: 0;
+        padding: 0;
+        top: 0%;
+        position: fixed;
+        width: 100%;
+        backdrop-filter: blur(3px);
+        transition: transform 0.3s ease-in-out;
+        
+        
+    }
+    .mobile_sidebar{
+        color: #FFFFFF;
+        display: none;
+   }
+    .dl{
+        font-weight: 300;
+    }
+    .hidden-sidebar {
+        transform: translateY(-100%);
+    }
+    .sidebar ul li a {
+        
+        font-size: 1rem;
+        font-weight: 400 ;
+        color: rgb(0, 0, 0);
+       
+     
+        
+    }
+    .sidebar ul li a { 
+        font-size: 1rem;
+        font-weight: 400 ;
+        color: white;
+     
+        border: 0;
+       
+    }
+    
+    
+    .sidebar ul li a :hover{
+        color: #E58E27;
+        transition: color 0.3s ease-in-out;
+    }
+    .sidebar ul li a img{
+        margin-top: 10px;
+        padding: 3px;
+        background-color:#252A32;       ;
+        width: 45px;
+        border-radius: 50px;
+    }
+
+    .sidebar ul{
+        display: flex;
+        
+    }
+    .sidebar ul li{
+        margin-right: 1rem;
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .account-info{
+        font-size: 12px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-color: #252A32;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        height: 40px;
+        color: #FFFFFF;
+        width: 40px;
+        margin-right: 10px;
+        transition: width 0.3s ease-out;
+    }
+    .user-details{
+        color: #FFFFFF;
+        display: none;
+        opacity: 0; 
+        transition: transform 0.3s ease-in-out;
+
+       
+    } 
+   
+    .account-info:hover .user-details {
+        transition: opacity 1s ease-out;
+        display: block;
+        opacity: 1; /* เมื่อ hover ที่ .account-info ให้แสดง .user-details และทำให้เป็นโปร่งแสง */
+    }
+    .account-info img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        margin-top: 6px;
+        margin-right: 6px;
+        margin-left: 25px;
+        transition: width 0.01s ease-out;
+       
+        
+    }
+    .account-info:hover img {
+        margin-left: 6px; /* เมื่อ hover ให้ margin-left เป็น 6px */
+    }
+    .account-info:hover .user-details,
+    .account-info:hover a,
+    .account-info:hover .logoutbut a i 
+    {
+    transition: opacity 0.01s ease-out;
+    display: initial;
+   
 }
 
+    .account-info:hover {
+        
+        transition: width 0.1s ease-out;
+        width: 170px;
+    }
+    .account-info a {
+        
+        transition: width 0.2s ease-out;
+        margin-left: 20px;
+        
+    }
+    .logoutbut a i{
+        
+        color: #D17842;
+        font-size: 15px;
+        margin-right: 10px;
+        display: none;
+    }
+
+
+/* ____________________trading graph____________________________ */
+ 
+
+.container {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container h2{
+    color: #0C0F14;
+}
+.tablecontent {
+    color: #0C0F14;
+    width: 100%;
+    border-collapse: collapse;
+}
+.tablecontent th, .tablecontent td {
+    border: 1px solid #ddd;
+  
+    text-align: center;
+}
+.tablecontent th {
+    background-color: #f2f2f2;
+}
+.allowbut {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.allowbut:hover {
+    background-color: #45a049;
+}
+form {
+    color: #0C0F14;
+    margin-bottom: 20px;
+}
+form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+form input[type="file"] {
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+table th {
+    background-color: #f2f2f2;
+}
+table a {
+    text-decoration: none;
+    color: blue;
+}
+
+.buttt{
+    padding: 4px 20px;
+}
+/* ________________________________________________ */
+
+
+
+
+}
+
+
+
+
+  

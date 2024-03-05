@@ -1,13 +1,13 @@
 <?php
 include('connect.php'); 
 
-if(isset($_GET['symbol']) && isset($_GET['timeframe']) && isset($_GET['tem_id'])) {
+if(isset($_GET['symbol']) && isset($_GET['timeframe']) && isset($_GET['id'])) {
     $symbol = $_GET['symbol'];
     $timeframe = $_GET['timeframe'];
-    $tem_id = $_GET['tem_id'];
+    $id = $_GET['id'];
 
     // Update download count in the database
-    $sql_update = "UPDATE template SET download_count = download_count + 1 WHERE Symbol = '$symbol' AND TimeFrame = '$timeframe' AND tem_id = '$tem_id'";
+    $sql_update = "UPDATE template SET download_count = download_count + 1 WHERE Symbol = '$symbol' AND timeframe = '$timeframe' AND id = '$id'";
     $conn->query($sql_update);
 
     // Perform download process here (e.g., generate file, zip files, etc.)
